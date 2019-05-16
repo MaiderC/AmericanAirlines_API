@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 
-public class AmericanAirlines extends UnicastRemoteObject implements itfCargaVuelos
+public class AmericanAirlines extends UnicastRemoteObject implements itfCargaVuelosIberia
 {
 	private ArrayList <clsVuelo>  ListaVuelos= new ArrayList <clsVuelo>();
 	
@@ -24,48 +24,56 @@ public class AmericanAirlines extends UnicastRemoteObject implements itfCargaVue
 				String codVuelo;
 				clsAeropuerto aeropuertoOrigen;
 				clsAeropuerto aeropuertoDestino;
-				Date fecha;
+				String fecha;
 				int numAsientos;
 				double precio;
+				ArrayList<Integer> Asientos = new ArrayList <Integer>();
+				ArrayList<Integer> AsientosOcupados = new ArrayList <Integer>();
 				
 				clsVuelo  nuevoVuelo;
 				codVuelo = "AA0001";
 				aeropuertoOrigen = new clsAeropuerto("BARC", "Barcelona", "España");
 				aeropuertoDestino = new clsAeropuerto("LON", "Londres", "Inglaterra");
-				fecha = new Date(28, 05, 2019 );
+				fecha ="28/05/2019";
 				numAsientos = 120;
 				precio = 180.90;
-				nuevoVuelo = new clsVuelo(codVuelo, aeropuertoOrigen, aeropuertoDestino, fecha, numAsientos, precio);
+				for(int i=0; i<numAsientos; i++)
+				{
+					Asientos.add(i);
+				}
+				
+				//, String fecha, ArrayList<Integer> Asientos,
+				nuevoVuelo = new clsVuelo(codVuelo, aeropuertoOrigen, aeropuertoDestino, fecha, Asientos, AsientosOcupados, precio);
 				ListaVuelos.add(nuevoVuelo);
 				
 				//Vuelo 2 (lo mismo pero en distita fecha con distinto precio:
 				nuevoVuelo.setCodVuelo("AA0002");
-				nuevoVuelo.setFecha(new Date(28, 05, 2019 ));
+				nuevoVuelo.setFecha("28/05/2019");
 				nuevoVuelo.setPrecio(230.15);
 				ListaVuelos.add(nuevoVuelo);
 				//Vuelo3:
 				nuevoVuelo.setCodVuelo("AA0003");
-				nuevoVuelo.setFecha(new Date(1, 06, 2019 ));
+				nuevoVuelo.setFecha("1/06/2019" );
 				nuevoVuelo.setPrecio(79.89);
 				ListaVuelos.add(nuevoVuelo);
 				
 				codVuelo = "AAF0004";
 				aeropuertoOrigen = new clsAeropuerto("AMS", "Amsterdam", "Holanda");
 				aeropuertoDestino = new clsAeropuerto("MAD", "Madrid", "España");
-				fecha = new Date(23, 06, 2019 );
+				fecha = "23/06/2019";
 				numAsientos = 120;
 				precio = 180.90;
-				nuevoVuelo = new clsVuelo(codVuelo, aeropuertoOrigen, aeropuertoDestino, fecha, numAsientos, precio);
+				nuevoVuelo = new clsVuelo(codVuelo, aeropuertoOrigen, aeropuertoDestino, fecha, Asientos, AsientosOcupados, precio);
 				ListaVuelos.add(nuevoVuelo);
 				
 				//Vuelo 5 (lo mismo pero en distita fecha con distinto precio:
 				nuevoVuelo.setCodVuelo("AA0005");
-				nuevoVuelo.setFecha(new Date(20, 05, 2019 ));
+				nuevoVuelo.setFecha("20/05/2019");
 				nuevoVuelo.setPrecio(230.15);
 				ListaVuelos.add(nuevoVuelo);
 				//Vuelo6:
 				nuevoVuelo.setCodVuelo("AA0006");
-				nuevoVuelo.setFecha(new Date(13, 05, 2019 ));
+				nuevoVuelo.setFecha("3/05/2019");
 				nuevoVuelo.setPrecio(300);
 				ListaVuelos.add(nuevoVuelo);
 				
@@ -74,40 +82,40 @@ public class AmericanAirlines extends UnicastRemoteObject implements itfCargaVue
 				aeropuertoOrigen = new clsAeropuerto("BIL", "Bilbao", "España");
 				aeropuertoDestino = new clsAeropuerto("GLW", "Glasgow", "Escocia");
 				
-				fecha = new Date(30, 05, 2019);
+				fecha = "30/05/2019";
 				numAsientos = 120;
 				precio = 120.90;
-				nuevoVuelo = new clsVuelo(codVuelo, aeropuertoOrigen, aeropuertoDestino, fecha, numAsientos, precio);
+				nuevoVuelo = new clsVuelo(codVuelo, aeropuertoOrigen, aeropuertoDestino, fecha, Asientos, AsientosOcupados, precio);
 				ListaVuelos.add(nuevoVuelo);
 				
 				//Vuelo 8 (lo mismo pero en distita fecha con distinto precio:
 				nuevoVuelo.setCodVuelo("AA0008");
-				nuevoVuelo.setFecha(new Date(30, 05, 2019 ));
+				nuevoVuelo.setFecha("30/05/2019");
 				nuevoVuelo.setPrecio(230.15);
 				ListaVuelos.add(nuevoVuelo);
 				//Vuelo 9:
 				nuevoVuelo.setCodVuelo("AA0009");
-				nuevoVuelo.setFecha(new Date(13, 05, 2019 ));
+				nuevoVuelo.setFecha("13/05/2019");
 				nuevoVuelo.setPrecio(79.89);
 				ListaVuelos.add(nuevoVuelo);
 				
 				codVuelo = "AA0010";
 				aeropuertoDestino = new clsAeropuerto("DUB", "Dublin", "Irlanda");
 				aeropuertoOrigen = new clsAeropuerto("REIK", "Reikiavik", "Islandia");
-				fecha = new Date(13, 06, 2019 );
+				fecha = "13/06/2019";
 				numAsientos = 120;
 				precio = 180.90;
-				nuevoVuelo = new clsVuelo(codVuelo, aeropuertoOrigen, aeropuertoDestino, fecha, numAsientos, precio);
+				nuevoVuelo = new clsVuelo(codVuelo, aeropuertoOrigen, aeropuertoDestino, fecha, Asientos, AsientosOcupados, precio);
 				ListaVuelos.add(nuevoVuelo);
 				
 				//Vuelo 11 (lo mismo pero en distita fecha con distinto precio:
 				nuevoVuelo.setCodVuelo("AA0011");
-				nuevoVuelo.setFecha(new Date(27, 06, 2019 ));
+				nuevoVuelo.setFecha("27/06/2019");
 				nuevoVuelo.setPrecio(230.15);
 				ListaVuelos.add(nuevoVuelo);
 				//Vuelo 12:
 				nuevoVuelo.setCodVuelo("AA0012");
-				nuevoVuelo.setFecha(new Date(17, 06, 2019 ));
+				nuevoVuelo.setFecha("17/06/2019");
 				nuevoVuelo.setPrecio(79.89);
 				ListaVuelos.add(nuevoVuelo);
 				
@@ -115,19 +123,19 @@ public class AmericanAirlines extends UnicastRemoteObject implements itfCargaVue
 				codVuelo = "AA0013";
 				aeropuertoOrigen = new clsAeropuerto("ROM", "Roma", "Italia");
 				aeropuertoDestino = new clsAeropuerto("MOS", "Moscú", "Rusia");
-				fecha = new Date(9, 05, 2019 );
+				fecha = "9/05/2019";
 				numAsientos = 120;
 				precio = 180.90;
-				nuevoVuelo = new clsVuelo(codVuelo, aeropuertoOrigen, aeropuertoDestino, fecha, numAsientos, precio);
+				nuevoVuelo = new clsVuelo(codVuelo, aeropuertoOrigen, aeropuertoDestino, fecha, Asientos, AsientosOcupados, precio);
 				ListaVuelos.add(nuevoVuelo);
 				//Vuelo 14 (lo mismo pero en distita fecha con distinto precio:
 				nuevoVuelo.setCodVuelo("AA0014");
-				nuevoVuelo.setFecha(new Date(2, 05, 2019 ));
+				nuevoVuelo.setFecha("2/05/2019");
 				nuevoVuelo.setPrecio(230.15);
 				ListaVuelos.add(nuevoVuelo);
 				//Vuelo 15:
 				nuevoVuelo.setCodVuelo("AA0015");
-				nuevoVuelo.setFecha(new Date(13, 06, 2019 ));
+				nuevoVuelo.setFecha("13/06/2019");
 				nuevoVuelo.setPrecio(79.89);
 				ListaVuelos.add(nuevoVuelo);
 	}			
@@ -138,13 +146,13 @@ public class AmericanAirlines extends UnicastRemoteObject implements itfCargaVue
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public ArrayList<clsVuelo> cargarIda(String aeroOrigen, String ciudadDestino, Date fecha) 
+	public ArrayList<clsVuelo> cargarIda(String aeroOrigen, String ciudadDestino, String fecha) 
 	{
 		ArrayList<clsVuelo>  retorno = new ArrayList<clsVuelo>();
 		
 		for(clsVuelo a : ListaVuelos)
 		{
-			if( (a.getAeropuertoOrigen().getCiudad()).equals(aeroOrigen) && (a.getAeropuertoDestino().getCiudad()).equals(ciudadDestino)  && (a.getFecha())==fecha)
+			if( (a.getAeropuertoOrigen().getCiudad()).equals(aeroOrigen) && (a.getAeropuertoDestino().getCiudad()).equals(ciudadDestino)  && (a.getFecha()).equals(fecha))
 			{
 				retorno.add(a);
 			}
@@ -154,8 +162,8 @@ public class AmericanAirlines extends UnicastRemoteObject implements itfCargaVue
 	}
 
 	@Override
-	public ArrayList<clsVuelo> cargarIdaVuelta(String ciudadOrigen, String ciudadDestino, Date fechaIda,
-			Date fechaVuelta) 
+	public ArrayList<clsVuelo> cargarIdaVuelta(String ciudadOrigen, String ciudadDestino, String fechaIda,
+			String fechaVuelta) 
 	{
 		ArrayList<clsVuelo> retorno = new ArrayList<clsVuelo>();
 		

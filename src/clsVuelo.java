@@ -8,8 +8,9 @@ public class clsVuelo
 	private String codVuelo;
 	private clsAeropuerto aeropuertoOrigen;
 	private clsAeropuerto aeropuertoDestino;
-	private Date fecha;
-	private int numAsientos; //Los asientos librs los controlamos nosotros aparte
+	private String fecha;
+	private ArrayList<Integer> Asientos;
+	private ArrayList<Integer> AsientosOcupados;
 	private double precio;
 	
 
@@ -19,17 +20,20 @@ public class clsVuelo
 		this.aeropuertoOrigen = null;
 		this.aeropuertoDestino = null;
 		this.fecha = null;
-		this.numAsientos = 0;
+		this.Asientos = null;
+		this.AsientosOcupados = null;
 		this.precio = 0;
 	}
 	
-	public clsVuelo(String codVuelo, clsAeropuerto aeropuertoOrigen, clsAeropuerto aeropuertoDestino, Date fecha, int numAsientos, double precio) 
+	public clsVuelo(String codVuelo, clsAeropuerto aeropuertoOrigen, clsAeropuerto aeropuertoDestino, String fecha, ArrayList<Integer> Asientos,
+	ArrayList<Integer> AsientosOcupados, double precio) 
 	{
 		this.codVuelo = codVuelo;
 		this.aeropuertoOrigen = aeropuertoOrigen;
 		this.aeropuertoDestino = aeropuertoDestino;
 		this.fecha = fecha;
-		this.numAsientos = numAsientos;
+		this.Asientos = Asientos;
+		this.AsientosOcupados = Asientos;
 		this.precio = precio;
 	}
 
@@ -57,20 +61,29 @@ public class clsVuelo
 		this.aeropuertoDestino = aeropuertoDestino;
 	}
 
-	public Date getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fechaIda) {
+	public void setFecha(String fechaIda) {
 		this.fecha = fechaIda;
 	}
 
-	public int getNumAsientos() {
-		return numAsientos;
+
+	public ArrayList<Integer> getAsientos() {
+		return Asientos;
 	}
 
-	public void setNumAsientos(int numAsientos) {
-		this.numAsientos = numAsientos;
+	public void setAsientos(ArrayList<Integer> asientos) {
+		Asientos = asientos;
+	}
+
+	public ArrayList<Integer> getAsientosOcupados() {
+		return AsientosOcupados;
+	}
+
+	public void setAsientosOcupados(ArrayList<Integer> asientosOcupados) {
+		AsientosOcupados = asientosOcupados;
 	}
 
 	public double getPrecio() {
