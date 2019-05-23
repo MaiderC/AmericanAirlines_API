@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 
-public class AmericanAirlines extends UnicastRemoteObject implements itfCargaVuelosIberia
+public class AmericanAirlines extends UnicastRemoteObject implements itfCargaVuelosAmericanAirlines
 {
 	private ArrayList <clsVuelo>  ListaVuelos= new ArrayList <clsVuelo>();
 	
@@ -195,6 +195,12 @@ public class AmericanAirlines extends UnicastRemoteObject implements itfCargaVue
 		}
 		
 		return retorno;
+	}
+
+	@Override
+	public ArrayList<clsVuelo> cargarTodos() {
+		// TODO Auto-generated method stub
+		return ListaVuelos;
 	}
 
 }
