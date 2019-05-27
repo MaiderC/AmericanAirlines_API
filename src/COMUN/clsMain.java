@@ -1,5 +1,8 @@
+package COMUN;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+
+import APIs.itfCargaVuelosAmericanAirlines;
 
 public class clsMain {
 

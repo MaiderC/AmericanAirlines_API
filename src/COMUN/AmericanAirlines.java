@@ -1,8 +1,11 @@
+package COMUN;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashSet;
+
+import APIs.itfCargaVuelosAmericanAirlines;
 
 
 public class AmericanAirlines extends UnicastRemoteObject implements itfCargaVuelosAmericanAirlines

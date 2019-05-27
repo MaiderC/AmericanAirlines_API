@@ -1,3 +1,4 @@
+package COMUN;
 
 
 import java.io.Serializable;

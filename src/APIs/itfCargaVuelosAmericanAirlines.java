@@ -1,8 +1,11 @@
+package APIs;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashSet;
+
+import COMUN.clsVuelo;
 
 
 public interface itfCargaVuelosAmericanAirlines extends Remote
