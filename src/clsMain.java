@@ -4,7 +4,7 @@ import java.rmi.registry.Registry;
 public class clsMain {
 
 	static String IP = "127.0.0.1";
-	static String Puerto = "1099";
+	static String Puerto = "1092";
 	static String Service = "AmericanAirlines";
 	
 	public static void main(String[] args) 
@@ -13,11 +13,12 @@ public class clsMain {
 		  {
 		   System.setSecurityManager(new SecurityManager());
 		  }
+		  
 		  String name = "//" + IP + ":" + Puerto + "/" +Service;
 		  try 
 		  {  
 		   itfCargaVuelosAmericanAirlines objServer = new AmericanAirlines();
-		   Registry registry = LocateRegistry.createRegistry((Integer.valueOf(args[1])));
+		   Registry registry = LocateRegistry.createRegistry((Integer.valueOf(Puerto)));
 		   registry.rebind(name, objServer);
 		 //Naming.rebind(name, objServer);
 		   System.out.println("* Server '" + name + "' active and waiting...");
