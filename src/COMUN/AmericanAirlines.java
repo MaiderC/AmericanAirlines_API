@@ -24,14 +24,6 @@ public class AmericanAirlines extends UnicastRemoteObject implements itfCargaVue
 	{
 		super();
 		//En el constructor, creamos todos los vuelos:
-				String codVuelo;
-				clsAeropuerto aeropuertoOrigen;
-				clsAeropuerto aeropuertoDestino;
-				String fecha;
-				int numAsientos;
-				double precio;
-				ArrayList<Integer> Asientos = new ArrayList <Integer>();
-				ArrayList<Integer> AsientosOcupados = new ArrayList <Integer>();
 				
 				//( BARCELONA - LONDRES )
 				ListaVuelos.add("AA0001;Barcelona;Londres;28/05/2019;180.90;120");
